@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border-collapse: collapse;
+
+        }
+
+        td,
+        th {
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Hva</th>
+            <th>Liste av "scalar" (Eks: tall)</th>
+            <th>Liste av objekter</th>
+        </tr>
+        <tr>
+            <td>Lage tom</td>
+            <td><tt>Var s = [];</tt></td>
+            <td><tt>Var o = [];</tt></td>
+        </tr>
+        <tr>
+            <td>Lage en med gitte verdier</td>
+            <td><tt>Var a = [1,2,3,5,5];</tt></td>
+            <td><tt>
+                    <pre>Var a = [
+                    {name: 'Per', alder: 18},
+                    {name: 'Pål', alder: 17},
+                    {name: 'Petter', alder: 16},
+];</pre>
+                </tt></td>
+        </tr>
+        <tr>
+            <td>Lagre verdier</td>
+            <td>
+                <tt>s[4] = 6;</tt>
+            </td>
+            <td>
+                Man kan enten legge inn eller endre et helt objekt,
+                eller endre bare et felt i ett eksisterende objekt.
+                Det siste krever at det finnes et objekt fra før.
+                <pre>o[4] = {name: 'Terje', alder: 43};
+                    o[2].name = 'Knut';
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Lese verdier</td>
+            <td>
+                <tt>console.log(s[4]);</tt>
+            </td>
+            <td>
+                Man kan enten legge inn eller endre et helt objekt,
+                eller endre bare et felt i ett eksisterende objekt.
+                Det siste krever at det finnes et objekt fra før.
+                Tallet som står mellom [ og ] betyr hvilken index i listen
+                man skal lagre på. Husk at første er 0.
+                Når det ikke ligger noe på 4 fra før, opprettes dette
+                elementet - og listen blir lengre.
+                Hvis det hadde ligget noe der fra før, hadde det inneholdet
+                blitt byttet ut.
+                <pre>console.log(o[4]) (gir "{name: 'Terje', alder: 43}")
+                    console.log(o[2].name); (gir 'Knut')
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Søke - bestemte verdier</td>
+            <td>Er 7 i lista?
+
+                Det er god programmering å pakke dette inn i en funskjon:
+                Vesjon som ikke teller:
+                <pre>function arrayHasValue(myArray, searchValue) {   
+            var isFound = false;
+            for(let index = 0; index < a.length; index++){
+                if(s[index] == searchValue){
+                    return true;
+                }
+            }
+            return false;
+        }       
+        </pre>
+                Kalles sliks <tt>if isFound = arrayHasValue(s,7);</tt>
+            </td>
+        </tr>
+        <tr>
+            <td>Søke - Kriterier</td>
+        </tr>
+        <tr>
+            <td>Sortere</td>
+        </tr>
+        <tr>
+            <td>Filtrere</td>
+        </tr>
+        <tr>
+            <td>Statestikk - frekvenstabell</td>
+        </tr>
+    </table>
+</body>
+
+</html>

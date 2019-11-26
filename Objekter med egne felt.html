@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 4px;
+        }
+
+        th {
+            background-color: darkblue;
+            color: whitesmoke;
+        }
+
+        tr:nth-child(even) {
+            background: antiquewhite;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="tasksTable">
+
+    </table>
+    <p><input type="text" /><button>Legg til oppgave</button></p>
+</body>
+
+<script>
+    //Model
+    var tasks = [
+        { description: 'Handle til middag', isDone: true },
+        { description: 'Lage middag', isDone: false },
+    ];
+
+
+    //Controller
+    function addTask() {
+
+    }
+    //View
+    var tasksTable = document.getElementById('tasksTable');
+    show();
+    function show() {
+        let html = `
+        <tr>
+            <th>Oppgave</th>
+            <th>Gjort</th>
+        </tr>
+        `;
+        for (let task of tasks) {
+            const checkedHtml = task.isDone ? 'checked="checked"' : '';
+            html += `<tr>
+            <td>${task.description}</td>
+            <td><input type="checkbox" ${checkedHtml} /></td>
+        `;
+        }
+        tasksTable.innerHTML = html;
+    }
+</script>
+
+</html>
